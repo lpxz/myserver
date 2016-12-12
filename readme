@@ -1,0 +1,12 @@
+How to reference the images in flask?
+It has to be inside the static/ folder, and you can use /static/SCREENSHOTS/img_01.png to reference it, for example.
+Make sure your path is valid. You can either copy SCREENSHOTS to static/ folder, or make a soft link to it inside static/.
+
+
+
+=======================
+I am using mod_wsgi now
+
+1 /etc/http/conf.d/miniblog.conf
+2 /var/www/miniblog/miniblog.wsgi
+3 /var/www/miniblog/app.py, I let it run on port 33333, which is important 

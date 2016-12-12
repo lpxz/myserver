@@ -1,0 +1,46 @@
+{% extends "nlp.html" %}
+
+
+
+{% block content %}
+<div id="post-page" class="push-left post">
+	<div id="checkSimilarity">
+		<div class="comment card post">
+                <span class="highlightme"> Find most similar words of a word</span> 
+                <br>
+                <br>
+                <form action="{{url_for('word2vec')}}" method="POST">
+				<input type="text" name="word" placeholder="word" onclick='javascript: this.value = ""'>
+				<input type="submit" name="command" value="Find">
+			</form>
+		{% for key, value in findResults.iteritems()%}
+        <p>{{ key }}: {{value}}
+		{% endfor %}
+		</div>
+	</div>
+</div>
+
+<div id="post-page" class="push-left post">
+	<div id="checkSimilarity">
+		<div class="comment card post">
+                <span class="highlightme">  Check similarity of two words </span> 
+                <br>
+                <br>
+			<form action="{{url_for('word2vec')}}" method="POST">
+				<input type="text" name="word1" placeholder="word1" onclick='javascript: this.value = ""'>
+				<input type="text" name="word2" placeholder="word2" onclick='javascript: this.value = ""'></input>
+				<input type="submit" name="command" value="Check">
+			</form>
+		<p>{{ checkResult }}
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+
+
+{% block footer %}
+
+
+{% endblock %}

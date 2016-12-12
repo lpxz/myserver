@@ -1,0 +1,27 @@
+<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/tomorrow.min.css" rel="stylesheet">  
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script> 
+<style>
+span.highlight {
+    background-color: yellow;
+}
+</style>
+
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+<html><body> 
+ <pre>
+
+<code class="swift">
+let individualScores = [75, 43, 103, 87, 12]
+<mark>var teamScore = 0</mark>
+<span class="highlight">for score in individualScores {</span>
+    if score > 50 {
+        teamScore += 3
+    } else {
+        teamScore += 1
+    }
+}
+</code>
+</pre></body>
+ </html>

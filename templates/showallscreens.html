@@ -1,0 +1,54 @@
+{% extends "mobile.html" %}
+
+
+{% block content %}
+<div id="post-page" class="push-left post">
+	<div id="showallscreens">
+		<div class="comment card post">
+                <span class="highlightme"> Show All Screens</span> 
+                <br>
+                <br>
+                <form action="{{url_for('showallscreens')}}" method="POST">
+				<input type="submit" name="command" value="Show">
+			</form>
+<center><table>
+{% if result %}
+<tr>
+<td>Summary of Screen</td> <td>Image Path</td><td>Labels on Screen</td> 
+</tr>
+{% endif %}
+		{% for screen in result%}
+                    <tr>                      
+                                 <td>
+                                    {% set value = screen["HumanIntentions"] %}
+                                    {% for d in value %}
+                                        {% if d == value|last  %}
+                                           {{ d }}
+                                        {% endif %}
+                                    {% endfor %}                                    
+                                
+                                </td>       
+                                 <td>
+                                     <img src="/static/SCREENSHOTS/{{screen['ImagePath']}}"  width="50%" height="50%"  onmouseOver="this.style.width='100%';" onmouseOut="this.style.width='50%';" > 
+                                        
+                                </td>       
+                                 <td>
+                                        {{screen['UIlabels']}}
+                                </td>  
+             
+                    </tr>
+		{% endfor %}
+</table></center>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+
+
+
+{% block footer %}
+
+
+{% endblock %}

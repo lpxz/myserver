@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+                <head>
+
+		<!--Resources-->
+		<link rel="stylesheet" href="../static/font-awesome-4.2.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../static/main.css">
+		<link rel="stylesheet" href="../static/button-style.css">
+		<link rel="icon" type="image/ico" href="../static/favicon.ico">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+		<script type="text/javascript" src="../static/jquery-1.11.1.min.js"></script>
+            
+            <style>
+                ul {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    background-color: #333;
+                }
+                
+                li {
+                    float: left;
+                }
+                
+                li a {
+                    display: block;
+                    color: white;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                }
+                
+                li a:hover:not(.active) {
+                    background-color: #111;
+                }
+                
+                .active {
+                    background-color: #4CAF50;
+                }
+                </style>
+                </head>
+                <body>
+                
+                <ul>
+                    <li><a class="active" href="{{ url_for('index')}}">Home</a></li>
+                    <li><a href="{{ url_for('word2vec')}}">Word2Vec</a></li>
+                    <li><a href="{{ url_for('verbnoun')}}">Verb/Noun Extraction</a></li>
+                    <li><a href="{{ url_for('translation') }}">Translation</a></li>
+                    <li><a href="{{ url_for('syntaxparsetree') }}">Syntax Parse Tree</a></li>
+                    <li><a href="{{ url_for('phrasesimilarity') }}">Phrase Similarity</a></li>
+                </ul>
+
+
+
+
+		<div id="main">
+		{% block content %}
+		
+		{% endblock %}
+		</div>
+		
+		<div id="footer">
+		  {% block footer %}
+		  {% endblock %}
+		</div>
+	</body>
+</html>

@@ -1,0 +1,168 @@
+figure {
+    display: inline-block;
+    margin: 20px; /* adjust as needed */
+}
+figure img {
+    vertical-align: top;
+}
+figure figcaption {
+    text-align: center;
+    width: 150px;
+}
+
+
+
+body
+{
+	font-family: 'Open Sans', sans-serif;
+	background-color: #E6E6E6;
+	margin: 0;
+	height: 100%;
+}
+h1
+{
+
+}
+a
+{
+	text-decoration: none;
+}
+.highlightme { 
+    font-weight: bold;
+    color:green;
+ }
+.header
+{
+	background-color: blue;
+	height: 70px;
+	width: 100%;
+	margin: 0;
+	position: fixed;
+	z-index: 5;
+}
+.heading
+{
+	left: 20%;
+	display: inline-block;
+	position: relative;
+}
+.links
+{
+	float: right;
+	top: 10%;
+}
+
+#create-new
+{
+	position: fixed;
+	display: block;
+	height: 60%;
+	width: 400px;
+	right: 0%;
+	bottom: -60%;
+	background-color: #E6E6E6;
+	z-index: 10;
+	border-style: solid;
+	border-color: red;
+}
+.create-new-heading
+{
+	background-color: red;
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	padding-left: 30px;
+	padding-right: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.form-create
+{
+	padding: 20px;
+}
+
+#form-toggle
+{
+	position: fixed;
+	display: block;
+	bottom: 5%;
+	right: 5%;
+	color: blue;
+	z-index: 15;
+}
+
+#main
+{
+	position: relative;
+	display: block;
+	width: 95%;
+	top: 100px;
+	height: 100%;
+	margin: auto;
+	z-index: 1;
+}
+#trending
+{
+	position: relative;
+	width: 20%;
+	height: 100%;
+}
+#posts
+{
+	position: relative;
+	width: 70%;
+	height: 100%;
+}
+.post
+{
+	padding: 2% 2%;
+}
+#post-page
+{
+	position: relative;
+	width: 70%;
+	height: 100%;
+}
+.push-right
+{
+	float: right;
+	display: block;
+}
+.push-left
+{
+	float: left;
+	display: block;
+}
+.card
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	z-index: 1;
+	background-color: white;
+	opacity: 1;
+	position: relative;
+
+}
+.shadow-right
+{
+	filter: drop-shadow(0.2px 0.2px 20px gray);
+	-webkit-filter: drop-shadow(0.2px 0.2px 20px gray);
+	-moz-filter: drop-shadow(0.2px 0.2px 20px gray);
+	-o-filter: drop-shadow(0.2px 0.2px 20px gray);
+}
+.shadow-left
+{
+	filter: drop-shadow(-0.2px 0.2px 20px gray);
+	-webkit-filter: drop-shadow(-0.2px 0.2px 20px gray);
+	-moz-filter: drop-shadow(-0.2px 0.2px 20px gray);
+	-o-filter: drop-shadow(-0.2px 0.2px 20px gray);
+}
+.circle
+{
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	background-color: blue;
+	display: inline;
+}

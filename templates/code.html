@@ -1,0 +1,37 @@
+<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/tomorrow.min.css" rel="stylesheet">  
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script> 
+<style>
+span.highlight {
+    background-color: yellow;
+}
+</style>
+
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+<html><body> 
+ <pre>
+
+
+<code class="swift">
+<!--<span class="highlight"-->
+
+{% set start = startLine%}
+{% set end = endLine%}
+{% for line in lines %}
+ {% if loop.index >= start and loop.index <= end  %}
+            {% autoescape false %}
+            <p><span class="highlight">{{line|replace(" ", "&nbsp;&nbsp;")}} </span>
+            {% endautoescape %}
+  {% else %}
+            {% autoescape false %}
+            <p>{{line|replace(" ", "&nbsp;&nbsp;")}}
+            {% endautoescape %}
+      {% endif %}
+{% endfor %}
+</code>
+</pre></body>
+ </html>
+
+
+

@@ -1,0 +1,29 @@
+{% extends "nlp.html" %}
+
+
+
+{% block content %}
+<div id="post-page" class="push-left post">
+	<div id="translation">
+		<div class="comment card post">
+                <span class="highlightme"> Translate from English to Chinese (small dataset)</span> 
+                <br>
+                <br>
+                <form action="{{url_for('translation')}}" method="POST">
+				<input type="text" name="sentence" placeholder="sentence" onclick='javascript: this.value = ""'>
+				<input type="submit" name="command" value="Translate">
+			</form>
+		<p>{{ result }}
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+
+
+
+{% block footer %}
+
+
+{% endblock %}

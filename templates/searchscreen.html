@@ -1,0 +1,64 @@
+{% extends "mobile.html" %}
+
+
+
+{% block content %}
+<div id="post-page" class="push-left post">
+	<div id="searchscreen">
+		<div class="comment card post">
+                <span class="highlightme"> Search For Screen</span> 
+                <br>
+                <br>
+                <form action="{{url_for('searchscreen')}}" method="POST">
+                                <label for="labelscreen">screen description:</label>
+				<input type="text" name="screen" placeholder="" value="{{request.form['screen']}}" onclick='javascript: this.value = ""'>
+                                <label for="labelTopK">top K=</label>
+				<input type="text" name="topK" placeholder="3" value="{{request.form['topK']}}" onclick='javascript: this.value = ""'>
+				<input type="submit" name="command" value="Search">
+                                <br>
+			</form>
+
+
+
+
+<center><table>
+{% if result %}
+<tr>
+<td>Summary of Screen</td> <td>Image Path</td><td>Labels on Screen</td> 
+</tr>
+{% endif %}
+		{% for screen in result%}
+                    <tr>                      
+                                 <td>
+                                    {% set value = screen["HumanIntentions"] %}
+                                    {% for d in value %}
+                                        {% if d == value|last  %}
+                                           {{ d }}
+                                        {% endif %}
+                                    {% endfor %}                                    
+                                
+                                </td>       
+                                 <td>
+                                     <img src="/static/SCREENSHOTS/{{screen['ImagePath']}}"  width="50%" height="50%"  onmouseOver="this.style.width='100%';" onmouseOut="this.style.width='50%';" > 
+                                        
+                                </td>       
+                                 <td>
+                                        {{screen['UIlabels']}}
+                                </td>  
+             
+                    </tr>
+		{% endfor %}
+</table></center>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+
+
+
+{% block footer %}
+
+
+{% endblock %}

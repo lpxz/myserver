@@ -1,0 +1,73 @@
+{% extends "mobile.html" %}
+
+
+
+{% block content %}
+<div id="post-page" class="push-left post">
+	<div id="searchbutton">
+		<div class="comment card post">
+                <span class="highlightme"> Search For Button</span> 
+                <br>
+                <br>
+                <form action="{{url_for('searchbutton')}}" method="POST">
+
+                                <label for="labelscreen">screen description:</label>
+				<input type="text" name="screen" placeholder="" value="{{request.form['screen']}}" onclick='javascript: this.value = ""'>
+                                <label for="labelbutton">button description:</label>
+				<input type="text" name="button" placeholder="" value="{{request.form['button']}}" onclick='javascript: this.value = ""'>
+                                <label for="labelTopK">top K=</label>
+				<input type="text" name="topK" placeholder="3" value="{{request.form['topK']}}" onclick='javascript: this.value = ""'>
+				<input type="submit" name="command" value="Search">
+                                <br>
+			</form>
+<center><table>
+{% if result %}
+<tr>
+<td>Button Label</td> <td>Code Info</td><td>Summary of Screen</td> <td>Labels on Screen</td> 
+</tr>
+{% endif %}
+		{% for button in result%}
+                    <tr>                      
+                                 <td>
+                                        {{button['ButtonLabel']}}
+                                </td>       
+                                 <td>
+                <form action="{{url_for('displaycode')}}" method="POST">
+                                <input type="hidden" name="codeinfo" value="{{button['CodeInfo']}}">
+				<input type="submit" name="command" value="Code">
+			</form>
+<!--
+<a href ="{{url_for('displaycode')}}?codeinfo={{button['CodeInfo']}}">
+code   
+</a>
+-->
+                                </td>  
+             
+                                 <td>
+                                    {% set value = button["HumanIntentionsOfScreen"] %}
+                                    {% for d in value %}
+                                        {% if d == value|last  %}
+                                           {{ d }}
+                                        {% endif %}
+                                    {% endfor %}                                    
+                                
+                                </td>       
+                                 <td>
+                                        {{button['UIlabelsOfScreen']}}
+                                </td>       
+                    </tr>
+		{% endfor %}
+</table></center>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+
+
+
+{% block footer %}
+
+
+{% endblock %}

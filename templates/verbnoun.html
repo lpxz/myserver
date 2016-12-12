@@ -1,0 +1,41 @@
+{% extends "nlp.html" %}
+
+
+
+{% block content %}
+<div id="post-page" class="push-left post">
+	<div id="Extract_Verbs_Nouns">
+		<div class="comment card post">
+                <span class="highlightme"> Extract Verbs/Nouns</span> 
+                <br>
+                <br>
+                <form action="{{url_for('verbnoun')}}" method="POST">
+				<input type="text" name="sentence" placeholder="sentence" onclick='javascript: this.value = ""'>
+				<input type="submit" name="command" value="Extract">
+			</form>
+            <br>
+            <br>
+         <p> <b>"Verb": "Position"</b>
+
+         {% for key, value in verbs.iteritems()%}
+        <p>{{ key }}: {{value}}
+		{% endfor %}
+        <br>
+        <br>
+         <p> <b>"Noun": "Level"</b>
+		{% for key, value in nouns.iteritems()%}
+        <p>{{ key }}: {{value}}
+		{% endfor %}
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+
+
+
+{% block footer %}
+
+
+{% endblock %}

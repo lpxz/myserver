@@ -1,0 +1,67 @@
+{% extends "mobile.html" %}
+
+<meta charset="utf-8"/>
+
+{% block content %}
+<div id="post-page" class="push-left post">
+	<div id="showallbuttons">
+		<div class="comment card post">
+                <span class="highlightme"> Show All Buttons</span> 
+                <br>
+                <br>
+                <form action="{{url_for('showallbuttons')}}" method="POST">
+				<input type="submit" name="command" value="Show">
+			</form>
+		
+<center><table>
+{% if result %}
+<tr>
+<td>Button Label</td> <td>Code Info</td><td>Summary of Screen</td> <td>Labels on Screen</td> 
+</tr>
+{% endif %}
+		{% for button in result%}
+                    <tr>                      
+                                 <td>
+                                        {{button['ButtonLabel']}}
+                                </td>       
+                                 <td>
+                <form action="{{url_for('displaycode')}}" method="POST">
+                                <input type="hidden" name="codeinfo" value="{{button['CodeInfo']}}">
+				<input type="submit" name="command" value="Code">
+			</form>
+<!--
+<a href ="{{url_for('displaycode')}}?codeinfo={{button['CodeInfo']}}">
+code   
+</a>
+-->                               
+                                </td>  
+             
+                                 <td>
+                                    {% set value = button["HumanIntentionsOfScreen"] %}
+                                    {% for d in value %}
+                                        {% if d == value|last  %}
+                                           {{ d }}
+                                        {% endif %}
+                                    {% endfor %}                                    
+                                
+                                </td>       
+                                 <td>
+                                        {{button['UIlabelsOfScreen']}}
+                                </td>       
+                    </tr>
+		{% endfor %}
+</table></center>
+
+                </div>
+	</div>
+</div>
+
+
+{% endblock %}
+
+
+
+{% block footer %}
+
+
+{% endblock %}

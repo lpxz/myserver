@@ -1,0 +1,36 @@
+{% extends "nlp.html" %}
+
+
+
+{% block content %}
+<div id="post-page" class="push-left post">
+	<div id="SyntaxParseTree">
+		<div class="comment card post">
+                <span class="highlightme"> Syntax Parse Tree</span> 
+                <br>
+                <br>
+                <form action="{{url_for('syntaxparsetree')}}" method="POST">
+				<input type="text" name="sentence" placeholder="sentence" onclick='javascript: this.value = ""'>
+				<input type="submit" name="command" value="Parse">
+			</form>
+            
+            {% for message in tree %}
+            {% autoescape false %}
+            <p>{{message|replace(" ", "&nbsp;&nbsp;")}}
+            {% endautoescape %}
+            <br>
+            {% endfor %}
+
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+
+
+
+{% block footer %}
+
+
+{% endblock %}

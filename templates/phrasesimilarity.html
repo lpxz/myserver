@@ -1,0 +1,30 @@
+{% extends "nlp.html" %}
+
+
+
+{% block content %}
+
+<div id="post-page" class="push-left post">
+	<div id="phrasesimilarity">
+		<div class="comment card post">
+                <span class="highlightme">  Compute phrase similarity</span> 
+                <br>
+                <br>
+			<form action="{{url_for('phrasesimilarity')}}" method="POST">
+				<input type="text" name="sentence1" placeholder="sentence1" onclick='javascript: this.value = ""'>
+				<input type="text" name="sentence2" placeholder="sentence2" onclick='javascript: this.value = ""'></input>
+				<input type="submit" name="command" value="Compute">
+			</form>
+		<p>{{ result }}
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+
+
+{% block footer %}
+
+
+{% endblock %}

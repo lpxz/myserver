@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}
+Research Hub
+{% endblock %}
+
+
+{% block content %}
+
+<div id="posts" class="push-left post">
+	<br>
+
+<center><table>
+<tr>
+
+<td>
+    <a href="{{url_for('nlp')}}">
+<figure>
+  <img src="../static/nlp.jpg" style="width:128px;height:150px;" alt="my img"/>
+  <figcaption> Natural Language Service </figcaption>
+</figure>
+</a>
+</td>
+<td>
+    <a href="{{url_for('mobile')}}">
+<figure>
+  <img src="../static/mobile.png" style="width:128px;height:150px;" alt="my img"/>
+  <figcaption> Mobile Research </figcaption>
+</figure>
+</a>
+</td>
+<td>
+<a href="{{url_for('bigdata')}}">
+<figure>
+  <img src="../static/elephant.jpeg" style="width:128px;height:150px;" alt="my img"/>
+  <figcaption> Big Data System Research </figcaption>
+</figure>
+</a>
+</td>
+<td>
+<a href="{{url_for('deeplearning')}}">
+<figure>
+  <img src="../static/deeplearning.png" style="width:128px;height:150px;" alt="my img"/>
+  <figcaption> Deep Learning Research </figcaption>
+</figure>
+</a>
+</td>
+<td>
+<a href="{{url_for('security')}}">
+<figure>
+  <img src="../static/security.png" style="width:128px;height:150px;" alt="my img"/>
+  <figcaption> Security Research </figcaption>
+</figure>
+</a>
+</td>
+<td>
+<a href="{{url_for('robot')}}">
+<figure>
+  <img src="../static/robot.jpg" style="width:128px;height:150px;" alt="my img"/>
+  <figcaption> Robot Research </figcaption>
+</figure>
+</a>
+</td>
+
+
+</tr>
+</table></center>
+
+
+
+</div>
+{% endblock %}
+
+
+{% block footer %}
+
+{% endblock %}
